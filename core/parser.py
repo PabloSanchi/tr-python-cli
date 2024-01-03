@@ -4,7 +4,6 @@ import os
 
 class CCTRParser(Parser):
     tokens = CCTRLexer.tokens
-    debugfile = './logs/parser.txt'
     
     @_('input token')
     def input(self, p):

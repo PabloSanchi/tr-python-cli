@@ -4,19 +4,7 @@ from sly import Lexer
 
 class CCTRLexer(Lexer):
     tokens =  { 
-        CHAR,
-        ALNUM,
-        ALPHA,
-        BLANK,
-        CNTRL,
-        DIGIT,
-        LOWER,
-        PRINT,
-        PUNCT,
-        RUNE,
-        SPACE,
-        SPECIAL,
-        UPPER,
+        CHAR, ALNUM, ALPHA, BLANK, CNTRL, DIGIT, LOWER, PRINT, PUNCT, RUNE, SPACE, SPECIAL, UPPER
     }
     
     literals = { '-', '"', '[', ']', ':' }

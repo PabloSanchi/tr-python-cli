@@ -38,7 +38,7 @@ class TestStringMethods(unittest.TestCase):
             'exception': False
         },
         {
-            'input': 'A-D"[:digit:]"',
+            'input': 'A-D[:digit:]',
             'output': ['A', 'B', 'C', 'D', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
             'exception': False
         },
@@ -57,7 +57,7 @@ class TestStringMethods(unittest.TestCase):
                     test_case['output']
                 )
             else:
-                with self.assertRaises(RuntimeError):
+                with self.assertRaises(ValueError):
                     CCTRParser().parse(CCTRLexer().tokenize(test_case['input']))
 
 if __name__ == '__main__':

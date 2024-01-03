@@ -29,4 +29,4 @@ class CCTRLexer(Lexer):
         self.lineno += t.value.count('\n')
     
     def error(self, t):
-        raise RuntimeError('Illegal character %r' % t.value[0])
+        raise ValueError('Illegal character %r' % t.value[0])

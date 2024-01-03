@@ -17,7 +17,7 @@ class CCTRParser(Parser):
     def input(self, p):
         return []
     
-    @_('"\"" "[" ":" classname ":" "]" "\""')
+    @_('"[" ":" classname ":" "]" ')
     def token(self, p):
         return p.classname
     

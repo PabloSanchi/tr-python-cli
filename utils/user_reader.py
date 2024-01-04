@@ -6,5 +6,6 @@ def execute_reader(range_base: RangeBase):
             user_input = input()
             output = range_base.execute(user_input)
             print(output)
-        except:
+        except Exception as e:
+            print("Exception: " + str(e))
             break

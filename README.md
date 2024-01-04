@@ -1,6 +1,12 @@
 # CODE CHALLENGE
 TR CLONE: https://codingchallenges.substack.com/p/coding-challenge-43-tr
 
+# SETUP
+- `python3 -m venv .venv`
+- `source .venv/bin/activate`
+- `pip3 install -r requirements.txt`
+- DONE :)
+
 # APPROACH
 As we can see some usage examples that we can use with the `tr` command are `tr A-Z a-z`, `tr A-Z"[:digit:]" a-z`
 
@@ -29,6 +35,7 @@ NOTE: `ε` represents no entry/input
 As we are using Python we are going to use the SLY module which let us to create a Lexer and a Parser.
 
 ## STEPS
+
 ### STEP 1
 In this step your goal is to support translating from one character to another, when reading from the standard input. For this your program should start up and wait for a line of input from the user. It will then output the line having made the substitution specified, for example:
 

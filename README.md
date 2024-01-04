@@ -12,7 +12,7 @@ We are using unittest module
 `python3 -m unittest discover -s tests`
 
 # APPROACH
-As we can see some usage examples that we can use with the `tr` command are `tr A-Z a-z`, `tr A-Z"[:digit:]" a-z`
+As we can see some usage examples with the `tr` command are `tr A-Z a-z`, `tr A-Z"[:digit:]" a-z`
 
 So in order to create this characters range to parse one to another we instead of falling to the if hell loop or trying to make some complex logic we take the approach of creating a new language and for that we need a grammar
 

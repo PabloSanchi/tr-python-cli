@@ -3,10 +3,10 @@ from sly import Lexer
 
 class CCTRLexer(Lexer):
 
-    tokens =  { 
+    tokens =  {
         CHAR, ALNUM, ALPHA, BLANK, CNTRL, DIGIT, LOWER, PRINT, PUNCT, RUNE, SPACE, SPECIAL, UPPER
     }
-    
+
     literals = { '-', '"', '[', ']', ':' }
 
     ALNUM = r'alnum'
@@ -21,12 +21,12 @@ class CCTRLexer(Lexer):
     SPACE = r'space'
     SPECIAL = r'special'
     UPPER = r'upper'
-    
+
     CHAR = r'[A-Za-z0-9]{1}'
 
     @_(r'\n+')
-    def newline(self, t):
+    def newline(self, t: any) -> None:
         self.lineno += t.value.count('\n')
-    
+
     def error(self, t):
         raise ValueError('Illegal character %r' % t.value[0])

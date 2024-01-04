@@ -1,6 +1,7 @@
-from core.range_base import RangeBase
 from dataclasses import dataclass, field
 from typing import List
+
+from core.range_base import RangeBase
 
 
 @dataclass
@@ -19,15 +20,15 @@ class RangeMapper(RangeBase):
         result = ''
         for src_char in src_string:
             result += self.map_char(src_char)
-            
+
         return result
 
-    def map_char(self, src_char):
+    def map_char(self, src_char: str) -> str:
         if src_char in self._cache:
             return self._cache[src_char]
-        
+
         index = self._lookup_dict.get(src_char, -1)
         return self._get_char_from_index(self.to_range, index) if index > -1 else src_char
-            
+
     def _get_char_from_index(self, range_to_get: List[str], index: int) -> str:
         return range_to_get[index] if index < len(range_to_get) else range_to_get[-1]

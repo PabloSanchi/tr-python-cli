@@ -1,12 +1,13 @@
-from core.range_base import RangeBase
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import List
+
+from core.range_base import RangeBase
 
 
 @dataclass
 class RangeSqueezer(RangeBase):
-    src_range: List[str]    
-    
+    src_range: List[str]
+
     def execute(self, src_string: str) -> str:
         result = ''
         previous_char = None

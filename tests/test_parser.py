@@ -1,6 +1,7 @@
 import unittest
-from core.parser import CCTRParser
+
 from core.lexer import CCTRLexer
+from core.parser import CCTRParser
 
 
 class TestStringMethods(unittest.TestCase):
@@ -49,7 +50,7 @@ class TestStringMethods(unittest.TestCase):
         },
     ]
 
-    def test_parser(self):
+    def test_parser(self) -> None:
         for test_case in self.test_cases:
             if not test_case['exception']:
                 self.assertEqual(

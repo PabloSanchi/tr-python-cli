@@ -1,10 +1,12 @@
 import unittest
-from core.range_base import RangeBase
-from core.range_deleter import RangeDeleter
-from core.range_squeezer import RangeSqueezer
-from core.range_mapper import RangeMapper
+
 from core.lexer import CCTRLexer
 from core.parser import CCTRParser
+from core.range_base import RangeBase
+from core.range_deleter import RangeDeleter
+from core.range_mapper import RangeMapper
+from core.range_squeezer import RangeSqueezer
+
 
 class TestRangeConversors(unittest.TestCase):
 
@@ -42,9 +44,9 @@ class TestRangeConversors(unittest.TestCase):
             'output': 'ABCCCCCDDDDDD',
         }
     ]
-    
-    def _get_strategy(self, class_name: str, args) -> RangeBase:
-        
+
+    def _get_strategy(self, class_name: str, args: list) -> RangeBase:
+
         if class_name == 'deleter':
             return RangeDeleter(src_range=args[0])
         elif class_name == 'squeezer':
@@ -57,18 +59,18 @@ class TestRangeConversors(unittest.TestCase):
         else:
             raise ValueError('Invalid strategy class name')
 
-    
-    def test_range_conversor(self):
+
+    def test_range_conversor(self) -> None:
         for test_case in self.test_cases:
-            
+
             args = [self.parser.parse(self.lexer.tokenize(arg)) for arg in test_case['args']]
-            
+
             strategy: RangeBase = self._get_strategy(
                 test_case['class'],
                 args
             )
-            
+
             self.assertEqual(strategy.execute(test_case['input']), test_case['output'])
-            
+
 if __name__ == '__main__':
     unittest.main()

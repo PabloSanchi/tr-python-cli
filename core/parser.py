@@ -11,10 +11,6 @@ class CCTRParser(Parser):
     def input(self, p):
         return p.input + p.token
 
-    @_('token')
-    def input(self, p):
-        return p.token
-
     @_('')
     def input(self, p):
         return []

@@ -19,7 +19,7 @@ So in order to create this characters range to parse one to another we instead o
 ## GRAMMAR
 
 ```bash
-S -> S TOKEN |  TOKEN | ε
+S -> S TOKEN | ε
 
 TOKEN -> [ : CLASSNAME : ] | CHAR CONT 
 

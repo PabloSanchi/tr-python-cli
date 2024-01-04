@@ -21,7 +21,7 @@ So in order to create this characters range to parse one to another we instead o
 ```bash
 S -> S TOKEN |  TOKEN | ε
 
-TOKEN -> " [ : CLASSNAME : ] " | CHAR CONT 
+TOKEN -> [ : CLASSNAME : ] | CHAR CONT 
 
 CONT -> - CHAR | ε
 

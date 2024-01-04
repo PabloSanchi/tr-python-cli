@@ -2,7 +2,7 @@ import sys, argparse
 from core.lexer import CCTRLexer
 from core.parser import CCTRParser
 from core.range_mapper import RangeMapper
-from core.ranage_deleter import RangeDeleter
+from core.range_deleter import RangeDeleter
 from core.range_squeezer import RangeSqueezer
 from core.range_pipeline import RangePipeline
 

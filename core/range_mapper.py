@@ -1,8 +1,10 @@
+from core.range_base import RangeBase
 from dataclasses import dataclass, field
 from typing import List
 
+
 @dataclass
-class RangeMapper:
+class RangeMapper(RangeBase):
     src_range: List[str]
     to_range: List[str]
     

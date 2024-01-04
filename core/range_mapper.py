@@ -16,8 +16,12 @@ class RangeMapper(RangeBase):
         self._cache = {}
 
     def execute(self, src_string: str) -> str:
-        return ''.join(self.map_char(char) for char in  src_string)
-        
+        result = ''
+        for src_char in src_string:
+            result += self.map_char(src_char)
+            
+        return result
+
     def map_char(self, src_char):
         if src_char in self._cache:
             return self._cache[src_char]

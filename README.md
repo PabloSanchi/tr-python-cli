@@ -7,6 +7,10 @@ TR CLONE: https://codingchallenges.substack.com/p/coding-challenge-43-tr
 - `pip3 install -r requirements.txt`
 - DONE :)
 
+## Runing tests
+We are using unittest module
+`python3 -m unittest discover -s tests`
+
 # APPROACH
 As we can see some usage examples that we can use with the `tr` command are `tr A-Z a-z`, `tr A-Z"[:digit:]" a-z`
 

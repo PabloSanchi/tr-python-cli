@@ -2,6 +2,7 @@ from core.lexer import CCTRLexer
 from sly import Parser
 import os
 
+
 class CCTRParser(Parser):
     tokens = CCTRLexer.tokens
     
